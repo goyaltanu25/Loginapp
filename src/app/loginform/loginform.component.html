@@ -1,0 +1,24 @@
+<p>Login Form</p>
+<hr>
+<form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<div class="textfield">
+  <label ><b>Project Name</b></label>
+  <input type="text" placeholder="Enter Project Name" formControlName="ProjectName">
+  <span *ngIf="!loginForm.get('ProjectName').valid && loginForm.get('ProjectName').touched"><b>Enter a Project name!!</b></span>
+</div>
+<div class="password" >
+  <label><b>Email id:</b></label>
+  <input type="email" placeholder="Enter email" formControlName="EmailId">
+  <span *ngIf="!loginForm.get('EmailId').valid && loginForm.get('EmailId').touched"><b>Enter a valid Email ID!!</b></span>
+</div>
+<div class="ProjectStatus">
+    <label><b> Project Status </b></label>
+  <select formControlName="ProjectStatus" >
+    <option value="Stable">Stable</option>
+    <option value="Critical">Critical</option>
+    <option value="Finished">Finished</option>
+  </select>
+</div>
+  <button >Submit</button>
+</form>
+   
